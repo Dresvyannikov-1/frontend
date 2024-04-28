@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Анкета</title>
+  <link rel="stylesheet" href="anketa_style.css">
+</head>
+
+<body>
+  <Header>
+    <a href="index.html"><img src="img/logo2 1.svg" alt="logo"></a>
+    <h1 class="title">Заполните данные о себе</h1>
+  </Header>
+
+  <section>
+    <h2>Что вы получите после регистрации</h2>
+    <ol class="mark">
+      <li class="mark">Ничего</li>
+      <li class="mark">По мелочи</li>
+    </ol>
+    <h3>Что потребуется при регистрации</h3>
+    <ul class="mark">
+      <li class="mark">Пенек</li>
+      <li class="mark">-Косарь</li>
+    </ul>
+    <ul>
+      <li class="goods">goods-1</li>
+      <li class="goods">goods-2</li>
+      <li class="goods">goods-3</li>
+      <li class="goods goods-sale">goods-4</li>
+      <li class="goods">goods-5</li>
+      <li class="goods">goods-6</li>
+      <li class="goods">goods-7</li>
+      <li class="goods">goods-8</li>
+    </ul>
+
+    <p class="section-text">Lorem ipsum dolor sit amet consectetur, <span class="spantext">adipisicing elit</span>.
+      Pariatur perferendis est suscipit earum <span class="spantext"><a class="spanlink"
+          href="index.html">veritatis</a></span> natus hic esse nesciunt architecto culpa.
+    </p>
+  </section>
+  <section>
+    <form action="#">
+      <p>Фамилия</p> <input class="input" type="text" name="Фамилия" placeholder="Шульженко">
+      <p>Имя</p> <input class="input" type="text" name="Имя" placeholder="Михаил">
+      <p>Отчество</p> <input class="input" type="text" name="Отчество" placeholder="Петрович">
+      <p>Дата рождения</p> <input class="input" type="date" name="Дата" id="">
+      <p>Ваш главный секрет</p> <input class="input" type="password" name="most secret" id=""><br>
+      <label class="section-text" for="check">Рассказать ваш секрет?</label> <input type="checkbox" name="" id="check">
+      Сколько раз
+      <select name="" id="">
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+      <p>Расскажите свой жизненный опыт</p>
+      <textarea name="Ввод" id="" cols="30" rows="10"></textarea><br>
+
+      <button type="submit" class="Button">Отправить</button>
+      <button type="reset" class="Button">Очистить</button>
+    </form>
+  </section>
+</body>
+
+</html>
