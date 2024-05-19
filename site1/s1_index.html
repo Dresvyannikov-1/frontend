@@ -37,11 +37,17 @@
                 </div>
             </div>
         </div>
-        <div class="photoblock">
+        <div class="photoblock center">
             <img class="header__photo" src="top_human.png" alt="human">
             <img class="header__photo_css" src="top_css.png" alt="">
             <img class="header__photo_html" src="top_html.png" alt="">
             <img class="header__photo_js" src="top_js.png" alt="">
+        </div>
+        <div class="photoblock_tablet center">
+            <img class="header__photo" src="top_human_table.png" alt="human">
+        </div>
+        <div class="photoblock_mobile center">
+            <img class="header__photo" src="top_human_mobile.png" alt="human">
         </div>
     </header>
 
@@ -81,7 +87,8 @@
             </h3>
             <div class="teachers__cards">
                 <div class="teachers__card">
-                    <img src="teachers_1.jpeg" alt="voenkov">
+                    <img class="teachers__img" src="teachers_1.jpeg" alt="voenkov">
+                    <img class="teachers__img_mobile" src="teachers_1_mobile.png" alt="voenkov">
                     <h4 class="teachers__title">Константин Военков</h4>
                     <h5 class="teachers__secondtitle">Тимлид разработчиков, Skypro</h5>
                     <p class="teachers__text">Более 14 лет в веб-разработке.
@@ -89,7 +96,8 @@
                         автопилота вводного урока и платформы обучения для учителей в Skyeng.</p>
                 </div>
                 <div class="teachers__card">
-                    <img src="teachers_2.jpeg" alt="diduh">
+                    <img class="teachers__img" src="teachers_2.jpeg" alt="diduh">
+                    <img class="teachers__img_mobile" src="teachers_2_mobile.png" alt="diduh">
                     <h4 class="teachers__title">Алексей Дидух</h4>
                     <h5 class="teachers__secondtitle">Frontend-разработчик, Skysmart</h5>
                     <p class="teachers__text">Более 7 лет в веб-разработке. Занимался разработкой ПО для платежных
@@ -142,12 +150,16 @@
             <h3 class="learn__title">Вы научитесь</h3>
             <div class="learn__items">
                 <div class="learn__item learn__item_1">
+                    <img class="learn__img_adaptive_mobile center" src="learn_img.png" alt="learn">
                     <p class="learn__text">Создавать сайты на HTML и CSS</p>
                 </div>
                 <div class="learn__item learn__item_2">
+                    <img class="learn__img_adaptive_tablet center" src="learn_img.png" alt="learn">
                     <p class="learn__text">Работать с базой данных MongoDB</p>
                 </div>
-                <div class="learn__item_last learn__item_null"></div>
+                <div class="learn__item_last learn__item_null">
+                    <img class="learn__img" src="learn_img.png" alt="learn">
+                </div>
                 <div class="learn__item learn__item_3">
                     <p class="learn__text">Создавать интерфейсы веб-приложений с помощью библиотеки React
                     </p>
@@ -160,7 +172,7 @@
                     <p class="learn__text">Разрабатывать сайты для мобильных устройств с помощью Bootstrap 4 и CSS</p>
                 </div>
             </div>
-            <img class="learn__img" src="learn_img.png" alt="learn">
+            
         </div>
     </section>
 
@@ -255,7 +267,7 @@
     <section class="questions">
         <div class="center">
             <h3 class="questions__title">Остались вопросы?</h3>
-            <div class="questions__items">
+            <div class="questions__items center">
                 <div class="questions__item-block">
                     <div class="questions__item">
                         <h4 class="questions__title-text">Ничего не понимаю в программировании. У меня получится?</h4>

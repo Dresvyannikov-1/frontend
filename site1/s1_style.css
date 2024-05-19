@@ -117,8 +117,14 @@ body {
 .header .photoblock {
   position: absolute;
   bottom: 0;
-  right: calc(50% - 581px);
+  right: 0;
   z-index: 2;
+}
+.header .photoblock_tablet {
+  display: none;
+}
+.header .photoblock_mobile {
+  display: none;
 }
 .header__photo {
   position: relative;
@@ -127,27 +133,26 @@ body {
 }
 .header__photo_css {
   position: absolute;
-  left: 320px;
+  right: 360px;
   top: 55px;
   opacity: 0.9;
 }
 .header__photo_html {
   position: absolute;
   top: 138px;
-  left: 220px;
+  right: 450px;
   z-index: 3;
   opacity: 0.9;
 }
 .header__photo_js {
   position: absolute;
   bottom: 200px;
-  left: 230px;
+  left: 110px;
   z-index: 1;
   opacity: 0.9;
 }
 
 .section__title {
-  max-width: 1067px;
   color: rgb(0, 0, 0);
   font-size: 80px;
   font-weight: 400;
@@ -184,7 +189,6 @@ body {
 .application__color {
   border-radius: 30px;
   background: rgb(249, 235, 255);
-  height: 260px;
 }
 .application__background {
   padding: 32px 40px 40px 40px;
@@ -199,14 +203,13 @@ body {
   margin-bottom: 48px;
 }
 .application__form {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
   gap: 8px;
   margin-bottom: 11px;
 }
 .application__input {
-  width: 264px;
+  grid-column: span 3;
   height: 48px;
   border-radius: 8px;
   background: rgb(255, 255, 255);
@@ -231,7 +234,7 @@ body {
   padding-right: 32px;
 }
 .application__button {
-  width: 268px;
+  grid-column: span 3;
   height: 48px;
   border-radius: 12px;
   background: rgb(0, 193, 255);
@@ -280,6 +283,9 @@ body {
   flex-direction: column;
   align-items: start;
   gap: 8px;
+}
+.teachers__img_mobile {
+  display: none;
 }
 .teachers__title {
   margin-top: 49px;
@@ -352,7 +358,7 @@ body {
 
 .learn {
   margin-top: 166px;
-  position: relative;
+  /*position: relative;*/
 }
 .learn__title {
   color: rgb(0, 0, 0);
@@ -382,6 +388,10 @@ body {
 .learn__item_null {
   grid-column: span 4;
   grid-column: span 4;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .learn__item_1 {
   grid-column: span 4;
@@ -413,8 +423,15 @@ body {
 }
 .learn__img {
   position: absolute;
-  right: calc(50% - 621px);
-  top: -85px;
+  right: 0;
+  bottom: -20%;
+  width: 120%;
+}
+.learn__img_adaptive_tablet {
+  display: none;
+}
+.learn__img_adaptive_mobile {
+  display: none;
 }
 
 .programm {
@@ -504,20 +521,19 @@ body {
   border-radius: 24px;
   background: rgb(249, 235, 255);
   display: flex;
-  justify-content: space-between;
-  gap: 208px;
+  justify-content: space-around;
+  padding-left: 100px;
+  padding-right: 110px;
 }
 .buy__item-price {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  padding-left: 100px;
 }
 .buy__item-form {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  padding-right: 110px;
 }
 .buy__title {
   padding-top: 60px;
@@ -556,7 +572,7 @@ body {
   border-radius: 8px;
   background: rgb(255, 255, 255);
   margin-bottom: 14px;
-  width: 440px;
+  width: 100%;
   height: 59px;
   color: rgb(0, 0, 0);
   font-size: 20px;
@@ -581,7 +597,7 @@ body {
   text-align: left;
 }
 .buy__button {
-  width: 440px;
+  width: 100%;
   height: 59px;
   border-radius: 8px;
   background: rgb(0, 193, 255);
@@ -645,7 +661,7 @@ body {
   text-align: left;
   margin-top: 24px;
   margin-bottom: 32px;
-  max-width: 760px;
+  /*max-width: 760px ;*/
 }
 .feedback__name {
   color: rgb(0, 0, 0);
@@ -669,8 +685,8 @@ body {
 .questions__items {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  -moz-column-gap: 100px;
-       column-gap: 100px;
+  -moz-column-gap: 5%;
+       column-gap: 5%;
 }
 .questions__item-block {
   grid-column: span 6;
@@ -722,6 +738,12 @@ body {
   margin-right: 100px;
 }
 
+@media (max-width: 1194px) {
+  .center {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
 @media (max-width: 1024px) {
   .center {
     padding-left: calc(50% - 308.5px);
@@ -756,9 +778,16 @@ body {
     grid-column: span 5;
   }
   .header .photoblock {
-    transform: scale(0.8);
-    right: calc(50% - 308.5px);
+    display: none;
+  }
+  .header .photoblock_tablet {
+    display: block;
+    position: absolute;
+    right: 0;
     bottom: 0;
+  }
+  .header .photoblock_mobile {
+    display: none;
   }
   .header__button {
     width: 210px;
@@ -799,7 +828,6 @@ body {
   }
   .application__color {
     border-radius: 18px;
-    height: 549px;
   }
   .application__background {
     padding-top: 33px;
@@ -870,6 +898,12 @@ body {
   }
   .teachers__card {
     grid-column: span 4;
+  }
+  .teachers__img {
+    display: none;
+  }
+  .teachers__img_mobile {
+    display: block;
   }
   .teachers__title {
     margin-top: 20px;
@@ -959,6 +993,7 @@ body {
     grid-column: span 4;
     grid-row: span 3;
     padding-right: 110px;
+    position: relative;
   }
   .learn__item_last {
     grid-column: span 8;
@@ -977,10 +1012,15 @@ body {
     font-size: 18px;
     line-height: 24px;
   }
-  .learn__img {
-    transform: scale(0.65);
-    right: calc(50% - 398px);
-    top: -195px;
+  .learn__img_adaptive_tablet {
+    display: block;
+    position: absolute;
+    width: 90%;
+    right: -90px;
+    top: -190px;
+  }
+  .learn__img_adaptive_mobile {
+    display: none;
   }
   .programm {
     margin-top: 82px;
@@ -1013,14 +1053,13 @@ body {
   .buy__item {
     flex-direction: column;
     gap: 0;
+    padding: 54px 66px 61px 66px;
   }
   .buy__item-price {
-    padding-left: 66px;
     position: relative;
   }
   .buy__item-form {
     justify-content: center;
-    padding-left: 66px;
   }
   .buy__title {
     padding-top: 54px;
@@ -1035,16 +1074,13 @@ body {
     position: absolute;
     font-size: 56px;
     top: 20px;
-    right: 50px;
+    right: 0;
   }
   .buy__input {
-    width: 490px;
+    width: 100%;
   }
   .buy__button {
-    width: 490px;
-  }
-  .buy__link {
-    padding-left: 66px;
+    width: 100%;
   }
   .feedback {
     margin-top: 125px;
@@ -1173,7 +1209,16 @@ body {
     margin-top: 14px;
   }
   .header .photoblock {
-    transform: scale(0.5);
+    display: none;
+  }
+  .header .photoblock_tablet {
+    display: none;
+  }
+  .header .photoblock_mobile {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
   .section__title {
     font-size: 32px;
@@ -1186,61 +1231,404 @@ body {
     line-height: 24px;
   }
   .application {
-    margin-top: 42px;
+    margin-top: 47px;
+    justify-content: start;
   }
   .application__color {
-    height: 388px;
+    border-radius: 18px;
   }
   .application__background {
-    padding-top: 33px;
-    padding-bottom: 32px;
+    padding: 23px 16px 21px 19px;
   }
   .application__title {
-    color: rgb(0, 0, 0);
-    font-size: 48px;
-    font-weight: 400;
-    line-height: 90%;
+    font-size: 20px;
+    line-height: 26px;
   }
   .application__form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 14px;
+    gap: 8px;
   }
   .application__input {
-    width: 490px;
-    height: 59px;
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 145%;
   }
   .application__input::-moz-placeholder {
-    font-size: 20px;
-    line-height: 135%;
-    padding-left: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 145%;
+    padding-left: 24px;
     padding-right: 32px;
   }
   .application__input::placeholder {
-    font-size: 20px;
-    line-height: 135%;
-    padding-left: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 145%;
+    padding-left: 24px;
     padding-right: 32px;
   }
   .application__button {
-    width: 490px;
-    height: 59px;
+    width: 100%;
+    height: 48px;
     border-radius: 8px;
-    line-height: 130%;
-  }
-  .application__link {
-    color: rgb(0, 0, 0);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 145%;
-    text-align: left;
-    text-decoration: none;
-    margin-top: 11px;
-    margin-left: 24px;
   }
-  .application__link_ref {
-    text-decoration: underline;
+  .application__link {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .teachers {
+    margin-top: 47px;
+  }
+  .teachers__title {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  .teachers__cards {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 55px;
+  }
+  .teachers__card {
+    grid-column: span 4;
+  }
+  .teachers__title {
+    margin-top: 20px;
+    line-height: 26px;
+  }
+  .teachers__secondtitle {
+    font-size: 16px;
+  }
+  .teachers__text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .lessons {
+    margin-top: 61px;
+  }
+  .lessons__title {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  .lessons__blocks {
+    gap: 42px;
+  }
+  .lessons__block {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 22px;
+  }
+  .lessons__img {
+    grid-column: span 4;
+    width: 100%;
+  }
+  .lessons__info {
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .lessons__text {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .lessons__text_blue {
+    color: rgb(169, 62, 220);
+  }
+  .lessons__text_gap {
+    margin-top: 0;
+  }
+  .learn {
+    margin-top: 42px;
+  }
+  .learn__title {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  .learn__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(13, 1fr);
+    row-gap: 11px;
+    position: relative;
+  }
+  .learn__item_null {
+    display: none;
+  }
+  .learn__item_1 {
+    grid-column: span 4;
+    grid-row: span 2;
+  }
+  .learn__item_2 {
+    grid-column: span 4;
+    grid-row: span 2;
+  }
+  .learn__item_last {
+    grid-column: span 4;
+    grid-row: span 3;
+    padding-right: 100px;
+  }
+  .learn__item_3 {
+    grid-column: span 4;
+    grid-row: span 3;
+    padding-right: 100px;
+  }
+  .learn__item_4 {
+    grid-column: span 4;
+    grid-row: span 3;
+    padding-right: 100px;
+  }
+  .learn__text {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 16px;
+  }
+  .learn__img_adaptive_tablet {
+    display: none;
+  }
+  .learn__img_adaptive_mobile {
+    display: block;
+    position: absolute;
+    width: 35%;
+    right: 0;
+    top: -100px;
+  }
+  .programm {
+    margin-top: 65px;
+  }
+  .programm__title {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  .programm__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .programm__items_gap {
+    margin-top: 24px;
+  }
+  .programm__item-small {
+    grid-column: span 4;
+  }
+  .programm__item-big {
+    grid-column: span 4;
+    gap: 11px;
+  }
+  .programm__text-title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .programm__text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .programm__button-position {
+    margin-top: 24px;
+  }
+  .programm__button {
+    width: 153px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .buy {
+    margin-top: 62px;
+  }
+  .buy__item {
+    display: flex;
+    padding: 28px 19px 28px 17px;
+  }
+  .buy__item-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+  .buy__item-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 8px;
+  }
+  .buy__title {
+    padding-top: 29px;
+    font-size: 32px;
+    line-height: 36px;
+    order: 1;
+    margin-bottom: 0;
+  }
+  .buy__text {
+    font-size: 16px;
+    line-height: 22px;
+    order: 3;
+  }
+  .buy__price {
+    position: relative;
+    margin-top: 15px;
+    font-size: 32px;
+    line-height: 36px;
+    order: 2;
+    top: 0;
+    right: 0;
+    margin-bottom: 27px;
+  }
+  .buy__title-text {
+    font-size: 32px;
+    line-height: 110%;
+    margin-bottom: 10px;
+  }
+  .buy__input {
+    margin-bottom: 0;
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    line-height: 145%;
+    padding: 14px 32px 14px 24px;
+  }
+  .buy__input::-moz-placeholder {
+    font-size: 16px;
+    line-height: 145%;
+  }
+  .buy__input::placeholder {
+    font-size: 16px;
+    line-height: 145%;
+  }
+  .buy__button {
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    line-height: 145%;
+    margin-bottom: 5px;
+  }
+  .buy__link {
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 0px;
+  }
+  .feedback {
+    margin-top: 125px;
+  }
+  .feedback__title {
+    color: rgb(0, 0, 0);
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 115%;
+    text-align: left;
+    margin-bottom: 62px;
+  }
+  .feedback__items {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .feedback__img {
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  .feedback__img_right {
+    justify-content: end;
+  }
+  .feedback__item {
+    grid-column: span 8;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+  .feedback__arrow {
+    width: 84px;
+    height: 70px;
+  }
+  .feedback__text {
+    color: rgb(0, 0, 0);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 110%;
+    text-align: left;
+    margin-top: 24px;
+    margin-bottom: 32px;
+    /*max-width: 760px ;*/
+  }
+  .feedback__name {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 135%;
+    text-align: left;
+  }
+  .feedback {
+    margin-top: 67px;
+  }
+  .feedback__title {
+    font-size: 32px;
+    margin-bottom: 36px;
+  }
+  .feedback__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .feedback__icon {
+    display: none;
+  }
+  .feedback__img {
+    display: none;
+  }
+  .feedback__img_right {
+    display: none;
+  }
+  .feedback__item {
+    grid-column: span 4;
+  }
+  .feedback__arrow {
+    width: 40px;
+    height: 33px;
+  }
+  .feedback__text {
+    font-size: 14px;
+    line-height: 20px;
+    width: 100%;
+  }
+  .questions {
+    margin-top: 86px;
+    margin-bottom: 69px;
+  }
+  .questions__title {
+    font-size: 32px;
+    line-height: 36px;
+    margin-bottom: 29px;
+  }
+  .questions__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    -moz-column-gap: 0;
+         column-gap: 0;
+  }
+  .questions__item-block {
+    grid-column: span 4;
+    row-gap: 24px;
+  }
+  .questions__item {
+    gap: 8px;
+  }
+  .questions__title-text {
+    font-size: 20px;
+    line-height: 24px;
+    width: 60%;
+  }
+  .questions__text {
+    font-size: 14px;
+    line-height: 20px;
+    width: 80%;
+  }
+}
+@media (max-width: 436px) {
+  .center {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }/*# sourceMappingURL=s1_style.css.map */
